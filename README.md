@@ -43,13 +43,13 @@ I will briefly describe my approach to analysis before responding to the questio
 
 ### Approach
 
-I begin with data extraction and inspection to determine what cleaning and preprocessing will be required for analysis. Preprocessing consisted of extracting user attributes from a text blob and creating a dataframe consisting of user attributes and unique user-ids.
+I begin with data extraction and inspection to determine what cleaning and preprocessing would be required for analysis. Preprocessing consisted of extracting user attributes from a text blob and creating a dataframe consisting of user attributes and unique user-ids.
 
-Relying on the users table, I grouped users into control and test groups and analyzed age, gender and location information in each group, noting any stark differences between the groups and describing the impact these differences would have on analysis.
+Relying on the users table, I grouped users into control and test groups and analyzed age, gender and location information in each group. I noted any stark differences between the groups and described the impact those differences would have on analysis.
 
-Analysis began in earnest by joining the user table to the bid table to identify the users targeted in each bid request. The same process of comparing control and test groups by demographic segments, I employed average conversion rate per request as a general indicator of performance. The results suggested the possibility of sampling error, so I proposed hypothesis testing the full results alongside a truncated dataset designed to reduce sampling error.
+Analysis began in earnest by joining the user table to the bid table to identify the user targeted in each bid request. Using same process of comparing control and test groups by demographic segments, I employed average conversion rate per request as a general indicator of performance. The results suggested the possibility of sampling error, so I attempted to estimate the magnitude of the effect by hypothesis testing the full dataset and compared results to hypothesis testing on a truncated dataset designed to reduce sampling error.
 
-Hypothesis testing strengthened the case for sampling error and indicated that a more precide metric of conversion rate per winning bid would be a better standard to evaluate campaign performance.
+Hypothesis testing strengthened the case for sampling error and indicated that a more precise metric of conversion rate per winning bid would be a better standard to evaluate campaign performance.
 
 ### Responses
 
@@ -66,7 +66,7 @@ The same natural variation characterized user gender distributions.
 
 ![Control and Test Group User Counts by Gender](images/Control_and_Test_Group_User_Counts_by_Gender.png)
 
-Notable oversampling in Alabama, Mississippi, North Carolina and Tennessee ran contrary to a more general trend to undersample the test group in the remaining location distributions.
+Notable oversampling in Alabama, Mississippi, North Carolina and Tennessee ran contrary to a more general trend to undersample the test group in the remaining locations.
 
 ![Control and Test Group User Counts by State](images/Control_and_Test_Group_User_Counts_by_State.png)
 
